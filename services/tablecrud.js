@@ -165,9 +165,15 @@ exports.fetchAllDiscount = async () => {
   };
   try {
     const data = await docClient.scan(items).promise();
+    let arr = [];
+     for(let i=0 ; i<data.Items.length ; i++){
+         if(data.Items[i].isDiscount === "true"){
+            arr.push(data.Items[i])
+         }
+    }
     return {
       status: true,
-      data: data,
+      data: arr,
     };
   } catch (err) {
     return {

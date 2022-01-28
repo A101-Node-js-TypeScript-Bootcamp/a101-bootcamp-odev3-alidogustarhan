@@ -38,13 +38,7 @@ exports.fetchSingleProductid = async (req,res) => {
 
 exports.fetchDiscount = async (req,res) => {
     const response = await tableCrudService.fetchAllDiscount(); 
-    let arr = [];
-     for(let i=0 ; i<response.data.Items.length ; i++){
-         if(response.data.Items[i].isDiscount === "true"){
-            arr.push(response.data.Items[i])
-         }
-    }
-    res.send(arr);  
+    res.send(response);  
 }
 
 
@@ -58,7 +52,6 @@ exports.fetchDeleteDiscount = async (req,res,next) => {
     const response = await tableCrudService.fetchDeleteDiscount(req.params); 
          if( response.data.Item.isDiscount === 'false'){
             next()
-            // if(typeof myVal == 'boolean')
          }else{
             res.send("BU ÜRÜNDE İNDİRİM OLDUGU İCİN SİLİNEMİYOR.")
          }   
