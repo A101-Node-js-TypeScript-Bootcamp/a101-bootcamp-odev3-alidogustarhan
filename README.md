@@ -15,8 +15,8 @@
 
     Verilen değişken adlarının buradaki ile birebir aynı olmasına dikkat ediniz.Bu değişken adları proje içerisinde bu şekilde kullanıldı.
     
-* DynamoDB'ye göndereceğiniz datalarınızın type'ları validasyon işlemi ile sabitlendi (String, Boolean , Number...)  Gönderdiğiniz datanın iskeleti şu şekilde olmalıdır.   Verileri JSON formatına uygun yollayınız.
-
+* DynamoDB'ye göndereceğiniz datalarınızın type'ları validasyon işlemi ile sabitlendi (String, Boolean , Number...)  Gönderdiğiniz datanın iskeleti şu şekilde olmalıdır.   
+* 
     ```
     {
         productId:string,
@@ -29,6 +29,20 @@
         }
     }
     ```
+* Verilerinizi Postman'den gönderirken JSON formatında olmalıdır.Örneğini aşağıda bulabilirsiniz.
+ ```
+ {    
+    "stock":"558",
+    "productName":"T-shirt",
+    "isDiscount":"false",
+    "category":{
+        "categoryId":"33",
+        "categoryName":"clothes"
+    }
+   
+}
+ 
+ ```
 * Yukarıdaki iskelete uygun type'larda veri göndermezseniz **kesinlikle veri ekleme işlemi yapamazsınız.** Örnek vermek gerekirse isDiscout verisi boolean olmalıdır. Bizim yolladığımız verideki isDiscount = 452145  gibi  bir  number  değerse  **veri eklenemez.**   Data'larınız bu validasyon işleminden geçtikten sonra dynamoDB'de sorgu kalitesini kısıtlamamak adına  **string**  formatında depolanacaktır.
 
 * Projenin çalışması için dynamoDB'de tablo oluşturmalısınız. Tabloyu iki şekilde oluşturabilirsiniz.
