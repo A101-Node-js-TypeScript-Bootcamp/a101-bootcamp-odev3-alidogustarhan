@@ -24,7 +24,7 @@
         productName:string,
         isDiscount:boolean,
         category:{
-            cateoryId:number,
+            categoryId:number,
             categoryName:string
         }
     }
