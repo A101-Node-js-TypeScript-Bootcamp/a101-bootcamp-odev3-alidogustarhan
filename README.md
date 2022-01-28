@@ -30,6 +30,7 @@
     }
     ```
 * Verilerinizi Postman'den gönderirken JSON formatında olmalıdır.Örneğini aşağıda bulabilirsiniz.
+
     ```
  {    
     "stock":"558",
