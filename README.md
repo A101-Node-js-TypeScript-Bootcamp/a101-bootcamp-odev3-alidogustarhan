@@ -31,7 +31,7 @@
     ```
 * Verilerinizi Postman'den gönderirken JSON formatında olmalıdır.Örneğini aşağıda bulabilirsiniz.
 
-    ```
+ ```
  {    
     "stock":"558",
     "productName":"T-shirt",
@@ -43,7 +43,7 @@
    
 }
  
-    ```
+ ```
 * Yukarıdaki iskelete uygun type'larda veri göndermezseniz **kesinlikle veri ekleme işlemi yapamazsınız.** Örnek vermek gerekirse isDiscout verisi boolean olmalıdır. Bizim yolladığımız verideki isDiscount = 452145  gibi  bir  number  değerse  **veri eklenemez.**   Data'larınız bu validasyon işleminden geçtikten sonra dynamoDB'de sorgu kalitesini kısıtlamamak adına  **string**  formatında depolanacaktır.
 
 * Projenin çalışması için dynamoDB'de tablo oluşturmalısınız. Tabloyu iki şekilde oluşturabilirsiniz.
